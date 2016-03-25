@@ -1,16 +1,14 @@
-N, K  = map(int, raw_input().split())
-N = [e for e in range(1, N+1)]
+n, k = map(int, raw_input().split())
+N = [x for x in range(1,n+1)]
 count = 1
-print N, K
 while len(N) > 1:
 	st = []
+	l = []
 	for i in range(len(N)):
-		if count % K == 0:
-			print "continue"
+		if count % k == 0:
+			l.append(N[i])
 		else:
-			print "pass"
-			print N[i]
+			st.append(N[i])
 		count += 1
-		print count
-	N -= 1
-	print N
+	N = st[:]
+print N[0]
